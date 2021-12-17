@@ -4,17 +4,10 @@
   (->>
     "/Users/themis/IdeaProjects/aoclj/src/src/input.txt"
     slurp
-    ;(re-seq #".*x\=(//d+)..(\\d+), y\=(\\d+)..(\\d+)")
     (re-seq #"target area: x=(\d+)..(\d+), y=(-\d+)..(-\d+)")
     ((fn [[[_ x-start x-end y-start y-end]]]
        {:x-start (read-string x-start) :x-end (read-string x-end) :y-start (read-string y-start) :y-end (read-string y-end)}))
     ))
-
-;(let [{a :a d :d} my-hashmap]
-;  (println a d))
-;;; => A D
-
-
 
 ;part1
 (def deepest-y
