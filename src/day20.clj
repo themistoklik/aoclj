@@ -52,12 +52,10 @@
   (let [blink (if (= \. (second (first algo))) 0 (mod i 2))
         xs (count img)
         ys (count (first img))]
-    (vec (for [x (range -1 (inc xs))
-               y (range -1 (inc ys))]
-           (algo (get-num img [x y] blink))))
     (vec (for [x (range -1 (inc xs))]
            (vec (for [y (range -1 (inc ys))]
-                  (algo (get-num img [x y] blink))))))))
+                  (algo (get-num img [x y] blink))))))
+    ))
 
 
 ;part 1 n == 2 part 2 n == 50
